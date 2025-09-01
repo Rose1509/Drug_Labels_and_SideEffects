@@ -65,7 +65,7 @@ For each model:
 
   - 2 → 😫 Severe
 
-5. FastAPI Deployment⚡
+### 5. FastAPI Deployment⚡
 
 I built a REST API using FastAPI that loads the trained pipeline and makes predictions:
 
@@ -133,6 +133,7 @@ Email: kcr3307@gmail.com
 ---
 
 ### ⚠️ Disclaimer: This project is for educational purposes only. Predictions should not be used for actual medical decision-making.
+
 
 
 
