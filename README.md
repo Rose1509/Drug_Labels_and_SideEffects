@@ -16,34 +16,36 @@ This repo contains:
 
 ## 🗂 Repository Structure
 
-'''project_root/
+```Drugs-SideEffect-Analysis/
+
 ├─ notebooks/
-│   ├─ BaseModel(Random_Forest_Classifier).ipynb
-│   ├─ Best_Model.ipynb
-│   ├─ Comparison_Model.ipynb
-│   ├─ Cross_Validation.ipynb
-│   ├─ Drug_Labels_and_Side_Effects_Analysis.ipynb
-│   ├─ EDA.ipynb
-│   ├─ Gradient_Bosting.ipynb
-│   ├─ Inference.ipynb
-│   ├─ Logistic_Regression.ipynb
-│   ├─ Preprocessing.ipynb
-│   ├─ Random_Forest_Classifier(FeatureSelection).ipynb
-│   ├─ Randomized_Search_CV.ipynb
-│   ├─ XgBoost.ipynb
+│ ├─ BaseModel(Random_Forest_Classifier).ipynb
+│ ├─ Best_Model.ipynb
+│ ├─ Comparison_Model.ipynb
+│ ├─ Cross_Validation.ipynb
+│ ├─ Drug_Labels_and_Side_Effects_Analysis.ipynb
+│ ├─ EDA.ipynb
+│ ├─ Gradient_Bosting.ipynb
+│ ├─ Inference.ipynb
+│ ├─ Logistic_Regression.ipynb
+│ ├─ Preprocessing.ipynb
+│ ├─ Random_Forest_Classifier(FeatureSelection).ipynb
+│ ├─ Randomized_Search_CV.ipynb
+│ ├─ XgBoost.ipynb
 │
 ├─ source/model/
-│   ├─ Best_Model.ipynb
-│   ├─ best_pipeline.joblib
-│   ├─ label_encoder.joblib
-│   ├─ app.py
-│   ├─ inference.py
+│ ├─ Best_Model.ipynb
+│ ├─ best_pipeline.joblib
+│ ├─ label_encoder.joblib
+│ ├─ app.py
+│ ├─ inference.py
 │
 ├─ drug_side_effect.csv
 ├─ requirements.txt
 ├─ .gitignore
-├─ README.md'''
+├─ README.md
 
+```
 
 
 
