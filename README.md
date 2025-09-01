@@ -118,7 +118,7 @@ Gradient Boosting provided the best trade-off between accuracy and class balance
 
 - Languages: Python
 
-- Libraries: Pandas, Scikit-learn, Matplotlib, XGBoost
+- Libraries: Pandas, Scikit-learn, Matplotlib, XGBoost 
 
 - Deployment: FastAPI, Swagger UI
 
