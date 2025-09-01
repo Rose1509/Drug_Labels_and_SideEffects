@@ -13,7 +13,7 @@ This repo contains:
 
 - 🌐 FastAPI Backend for real-time inference
 
----
+
 
 ## 🧩 Project Breakdown
 ### 1. Data Preprocessing & Cleaning🧹
@@ -96,7 +96,7 @@ POST /predict
   "prediction_class": "Moderate"
 }
 
---- 
+ 
 
 ## 📚 Key Learning Outcomes
 
@@ -112,7 +112,7 @@ Through this project, I’ve learned to:
 
 - Implement robust error handling and input validation in APIs.
 
---- 
+ 
 
 ## 🚀 Future Plans
 
@@ -122,7 +122,7 @@ Through this project, I’ve learned to:
 
 - Deploy on AWS/GCP/Heroku for live access.
 
----
+
 
 ## 📬 Connect With Me
 
@@ -130,9 +130,10 @@ LinkedIn: https://www.linkedin.com/in/rose-kc-0622ba315/
 
 Email: kcr3307@gmail.com
 
----
+
 
 ### ⚠️ Disclaimer: This project is for educational purposes only. Predictions should not be used for actual medical decision-making.
+
 
 
 
