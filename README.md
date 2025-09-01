@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Drug Side Effect Severity Prediction 🚑⚡
 
 A machine learning project that predicts side effect severity of drugs based on dosage, expiry date, and categorical features (drug type, manufacturer, etc.). Built with Random Forest, XGBoost, and Gradient Boosting pipelines, deployed with FastAPI for real-time predictions.
@@ -386,7 +385,3 @@ Email: kcr3307@gmail.com
 
 
 
-
-
-
->>>>>>> 6dbcdb765004a034629f3983f834a84f0581332d
