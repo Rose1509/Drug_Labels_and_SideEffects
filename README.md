@@ -17,13 +17,12 @@ This repo contains:
 ## 🗂 Repository Structure
 
 project_root/
-│
 ├─ notebooks/
 │   ├─ BaseModel(Random_Forest_Classifier).ipynb
 │   ├─ Best_Model.ipynb
-│   ├─ Comparison Model.ipynb
+│   ├─ Comparison_Model.ipynb
 │   ├─ Cross_Validation.ipynb
-│   ├─ Drug Labels and Side Effects Analysis.ipynb
+│   ├─ Drug_Labels_and_Side_Effects_Analysis.ipynb
 │   ├─ EDA.ipynb
 │   ├─ Gradient_Bosting.ipynb
 │   ├─ Inference.ipynb
@@ -44,6 +43,7 @@ project_root/
 ├─ requirements.txt
 ├─ .gitignore
 ├─ README.md
+
 
 
 
