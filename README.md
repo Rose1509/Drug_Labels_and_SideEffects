@@ -14,6 +14,35 @@ This repo contains:
 
 - 🌐 FastAPI Backend for real-time inference
 
+## 🗂 Repository Structure
+
+├─ notebooks/
+│   ├─ BaseModel(Random_Forest_Classifier).ipynb
+│   ├─ Best_Model.ipynb
+│   ├─ Comparison Model.ipynb
+│   ├─ Cross_Validation.ipynb
+│   ├─ Drug Labels and Side Effects Analysis.ipynb
+│   ├─ EDA.ipynb
+│   ├─ Gradient_Bosting.ipynb
+│   ├─ Inference.ipynb
+│   ├─ Logistic_Regression.ipynb
+│   ├─ Preprocessing.ipynb
+│   ├─ Random_Forest_Classifier(FeatureSelection).ipynb
+│   ├─ Randomized_Search_CV.ipynb
+│   ├─ XgBoost.ipynb
+│
+├─ source/model/
+│   ├─ Best_Model.ipynb
+│   ├─ best_pipeline.joblib
+│   ├─ label_encoder.joblib
+│   ├─ app.py
+│   ├─ inference.py
+│
+├─ drug_side_effect.csv
+├─ requirements.txt
+├─ .gitignore
+├─ README.md
+
 
 
 ## 🧩 Project Breakdown
