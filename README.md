@@ -78,6 +78,22 @@ I built a REST API using FastAPI that loads the trained pipeline and makes predi
 
 - Error handling: If model fails to load or input is invalid, the API returns a clear JSON error response.
 
+### 7. Best-Model(Gradient-Boosting).ipynb
+
+- Chooses Gradient Boosting as the best performing model.
+  
+- Retrains it on the full training dataset. 
+
+- Saves the trained model using joblib for future inference. 
+
+### 6. Infererence-best-model.ipynb
+
+- Loads the saved Gradient Boosting model
+  
+- Demonstrates how to make predictions on new/unseen data
+  
+- Explains each step of inference clearly
+
 ## 📊 Model Performance & Comparison
 During development, I experimented with several models to predict drug side effect severity and evaluated them on accuracy, log loss, and class-level metrics to determine the best approach.
 
@@ -165,7 +181,15 @@ Through this project, I’ve learned to:
 
 - Implement robust error handling and input validation in APIs.
 
- 
+## 📈 Visualizations
+
+- Confusion matrix heatmaps for model evaluation.
+  
+- Feature importance plots.
+  
+- Correlation heatmaps.
+  
+- Comparison of all models.
 
 ## 🚀 Future Plans
 
