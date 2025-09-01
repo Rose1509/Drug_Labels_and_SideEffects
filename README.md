@@ -1,5 +1,6 @@
 # Drug Side Effect Severity Prediction 🚑⚡
 
+A machine learning project that predicts side effect severity of drugs based on dosage, expiry date, and categorical features (drug type, manufacturer, etc.). Built with Random Forest, XGBoost, and Gradient Boosting pipelines, deployed with FastAPI for real-time predictions.
 
 ## 🔥 What This Project Is
 
@@ -77,6 +78,54 @@ I built a REST API using FastAPI that loads the trained pipeline and makes predi
 
 - Error handling: If model fails to load or input is invalid, the API returns a clear JSON error response.
 
+## 📊 Model Performance & Comparison
+During development, I experimented with several models to predict drug side effect severity and evaluated them on accuracy, log loss, and class-level metrics to determine the best approach.
+
+| Model                                              | Test Accuracy | Test Log Loss | Notes                                                                                                                    |
+| -------------------------------------------------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Gradient Boosting (Final)**                      | 0.378         | 1.18          | Slightly better accuracy than other models; relatively balanced across classes but overall predictions are weak.         |
+| **Random Forest (After Feature Selection)**        | 0.32          | 1.180         | Feature selection decreased performance. Model overfits moderately; poor generalization on test data.                    |
+| **Gradient Boosting (CV & Hyperparameter Tuning)** | 0.33–0.36     | 1.10–1.11     | High overfitting (train 0.92 vs test \~0.33). Performs well on class 0 but fails on class 2.                             |
+| **XGBoost**                                        | 0.3576        | 1.098         | Lowest log loss but heavily biased toward class 0. Underfits on training data; predictions skewed toward majority class. |
+| **Logistic Regression**                            | 0.347         | 1.180         | Baseline linear model; underfits, uniform predictions across classes, highlighting dataset complexity.               |
+
+### 🔍 Key Insights
+
+- Best Accuracy: Gradient Boosting (Final)
+
+- Best Log Loss: XGBoost, but suffers from severe class imbalance
+
+- Overfitting Analysis:
+
+  - GB (CV/Tuned) → extreme overfit (train 0.92 vs test ~0.33)
+
+  - RF → moderate overfit
+
+  - XGBoost → slight underfit but biased predictions
+
+- Class Imbalance & Bias:
+
+  - XGBoost favors class 0 heavily
+
+  - GB and RF more balanced but low overall performance
+
+  - Logistic Regression uniform but underfit
+
+### Conclusion:
+Gradient Boosting provided the best trade-off between accuracy and class balance. XGBoost minimized log loss but failed to generalize for minority classes. Logistic Regression served as a baseline, emphasizing the need for non-linear models to handle complex relationships in the dataset.
+
+## 🛠️ Tech Stack
+
+- Languages: Python
+
+- Libraries: Pandas, Scikit-learn, Matplotlib, XGBoost
+
+- Deployment: FastAPI, Swagger UI
+
+- Model Persistence: Joblib
+
+---
+
 📌**Example request:**
 POST /predict
 {
@@ -105,8 +154,12 @@ Through this project, I’ve learned to:
 - Handle messy medical/pharma datasets with systematic preprocessing.
 
 - Use SMOTE properly to balance classes without leaking test data.
+  
+- Learned feature selection (embedded methods, correlation, importance).
 
 - Build production-ready ML pipelines (not just experiments in a notebook).
+
+- Practiced hyperparameter tuning with stratified K-Fold.
 
 - Deploy models with FastAPI so they’re accessible as a real-world service.
 
@@ -120,8 +173,7 @@ Through this project, I’ve learned to:
 
 - Add a frontend UI for non-technical users.
 
-- Deploy on AWS/GCP/Heroku for live access.
-
+- Scaling FastAPI deployment with Docker & Kubernetes.
 
 
 ## 📬 Connect With Me
@@ -133,6 +185,7 @@ Email: kcr3307@gmail.com
 
 
 ### ⚠️ Disclaimer: This project is for educational purposes only. Predictions should not be used for actual medical decision-making.
+
 
 
 
