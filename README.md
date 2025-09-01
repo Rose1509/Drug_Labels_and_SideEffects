@@ -16,7 +16,7 @@ This repo contains:
 
 ## 🗂 Repository Structure
 
-project_root/
+'''project_root/
 ├─ notebooks/
 │   ├─ BaseModel(Random_Forest_Classifier).ipynb
 │   ├─ Best_Model.ipynb
@@ -42,7 +42,7 @@ project_root/
 ├─ drug_side_effect.csv
 ├─ requirements.txt
 ├─ .gitignore
-├─ README.md
+├─ README.md'''
 
 
 
@@ -135,7 +135,7 @@ During development, I experimented with several models to predict drug side effe
 | **Random Forest (After Feature Selection)**        | 0.32          | 1.180         | Feature selection decreased performance. Model overfits moderately; poor generalization on test data.                    |
 | **Gradient Boosting (CV & Hyperparameter Tuning)** | 0.33–0.36     | 1.10–1.11     | High overfitting (train 0.92 vs test \~0.33). Performs well on class 0 but fails on class 2.                             |
 | **XGBoost**                                        | 0.3576        | 1.098         | Lowest log loss but heavily biased toward class 0. Underfits on training data; predictions skewed toward majority class. |
-| **Logistic Regression**                            | 0.347         | 1.180         | Baseline linear model; underfits, uniform predictions across classes, highlighting dataset complexity.               |
+| **Logistic Regression**                            | 0.347         | 1.180         | Baseline linear model; underfits, uniform predictions across classes, highlighting dataset complexity.                   |
 
 ### 🔍 Key Insights
 
