@@ -240,7 +240,9 @@ LinkedIn: https://www.linkedin.com/in/rose-kc-0622ba315/
 
 Email: kcr3307@gmail.com
 
-### ⚠️ Disclaimer: This project is for educational purposes only. Predictions should not be used for actual medical decision-making.
+### ⚠️ Disclaimer:
+
+This project is for educational purposes only. Predictions should not be used for actual medical decision-making.
 
 
 
