@@ -32,9 +32,6 @@ MANIFEST
 *.manifest
 *.spec
 
-# Model files
-*.joblib
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
