@@ -78,7 +78,7 @@ I built a REST API using FastAPI that loads the trained pipeline and makes predi
 
 - Error handling: If model fails to load or input is invalid, the API returns a clear JSON error response.
 
-### 7. Best-Model(Gradient-Boosting).ipynb
+### 6. Best-Model(Gradient-Boosting).ipynb
 
 - Chooses Gradient Boosting as the best performing model.
   
@@ -86,7 +86,7 @@ I built a REST API using FastAPI that loads the trained pipeline and makes predi
 
 - Saves the trained model using joblib for future inference. 
 
-### 6. Infererence-best-model.ipynb
+### 7. Infererence-best-model.ipynb
 
 - Loads the saved Gradient Boosting model
   
