@@ -16,6 +16,8 @@ This repo contains:
 
 ## 🗂 Repository Structure
 
+project_root/
+│
 ├─ notebooks/
 │   ├─ BaseModel(Random_Forest_Classifier).ipynb
 │   ├─ Best_Model.ipynb
@@ -42,6 +44,7 @@ This repo contains:
 ├─ requirements.txt
 ├─ .gitignore
 ├─ README.md
+
 
 
 
