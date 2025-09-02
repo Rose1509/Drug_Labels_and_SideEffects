@@ -34,16 +34,6 @@ This repo contains:
 
 ```Drugs-SideEffect-Analysis/
 
-├── CLI(inference)/ # Command-line inference script
-│ └── inference.py
-
-├── Source/ # FastAPI backend
-│ └── app.py
-
-├── model/ # Saved models & encoders
-│ ├── best_pipeline.joblib
-│ └── label_encoder.joblib
-
 ├── notebooks/ # Jupyter notebooks (EDA → Deployment)
 │ ├── 1_EDA.ipynb
 │ ├── 2_Preprocessing.ipynb
@@ -57,6 +47,15 @@ This repo contains:
 │ ├── 10_Comparison_Model.ipynb
 │ ├── 11_Best_Model.ipynb
 │ └── 12_Inference.ipynb
+├── CLI(inference)/ # Command-line inference script
+│ └── inference.py
+
+├── Source/ # FastAPI backend
+│ └── app.py
+
+├── model/ # Saved models & encoders
+│ ├── best_pipeline.joblib
+│ └── label_encoder.joblib
 
 ├── .gitignore
 ├── README.md
