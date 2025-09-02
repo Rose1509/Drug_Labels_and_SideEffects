@@ -1,6 +1,22 @@
 # Drug Side Effect Severity Prediction 🚑⚡
 
-A machine learning project that predicts side effect severity of drugs based on dosage, expiry date, and categorical features (drug type, manufacturer, etc.). Built with Random Forest, XGBoost, and Gradient Boosting pipelines, deployed with FastAPI for real-time predictions.
+A machine learning project that predicts drug side effect severity (Mild / Moderate / Severe) using features like dosage, expiry date, drug type, indications, contraindications, and warnings.
+
+Built with Random Forest, XGBoost, and Gradient Boosting pipelines, and deployed with FastAPI for real-time predictions.
+
+# 📂 Dataset
+
+- Source: Drug Labels & Side Effects Dataset (Kaggle, 1400 records)
+
+- Preprocessing included:
+
+  - Removing duplicates & handling missing values
+
+  - Treating outliers in dosage/expiry
+
+  - Converting expiry dates → days_until_expiry
+
+  - Balancing classes with SMOTE
 
 ## 🔥 What This Project Is
 
@@ -18,36 +34,35 @@ This repo contains:
 
 ```Drugs-SideEffect-Analysis/
 
-├─ notebooks/
-│ ├─ BaseModel(Random_Forest_Classifier).ipynb
-│ ├─ Best_Model.ipynb
-│ ├─ Comparison_Model.ipynb
-│ ├─ Cross_Validation.ipynb
-│ ├─ Drug_Labels_and_Side_Effects_Analysis.ipynb
-│ ├─ EDA.ipynb
-│ ├─ Gradient_Bosting.ipynb
-│ ├─ Inference.ipynb
-│ ├─ Logistic_Regression.ipynb
-│ ├─ Preprocessing.ipynb
-│ ├─ Random_Forest_Classifier(FeatureSelection).ipynb
-│ ├─ Randomized_Search_CV.ipynb
-│ ├─ XgBoost.ipynb
-│
-├─ source/model/
-│ ├─ Best_Model.ipynb
-│ ├─ best_pipeline.joblib
-│ ├─ label_encoder.joblib
-│ ├─ app.py
-│ ├─ inference.py
-│
-├─ drug_side_effect.csv
-├─ requirements.txt
-├─ .gitignore
-├─ README.md
+├── CLI(inference)/ # Command-line inference script
+│ └── inference.py
+
+├── Source/ # FastAPI backend
+│ └── app.py
+
+├── model/ # Saved models & encoders
+│ ├── best_pipeline.joblib
+│ └── label_encoder.joblib
+
+├── notebooks/ # Jupyter notebooks (EDA → Deployment)
+│ ├── 1_EDA.ipynb
+│ ├── 2_Preprocessing.ipynb
+│ ├── 3_BaseModel(Random_Forest_Classifier).ipynb
+│ ├── 4_Random_Forest_Classifier(FeatureSelection).ipynb
+│ ├── 5_XgBoost.ipynb
+│ ├── 6_Cross_Validation.ipynb
+│ ├── 7_Randomized_Search_CV.ipynb
+│ ├── 8_Gradient_Boosting.ipynb
+│ ├── 9_Logistic_Regression.ipynb
+│ ├── 10_Comparison_Model.ipynb
+│ ├── 11_Best_Model.ipynb
+│ └── 12_Inference.ipynb
+
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 ```
-
-
 
 
 ## 🧩 Project Breakdown
