@@ -6,7 +6,7 @@ Built with Random Forest, XGBoost, and Gradient Boosting pipelines, and deployed
 
 # 📂 Dataset
 
-- Source: [Drug Labels & Side Effects Dataset (Kaggle, 1400 records)](https://www.kaggle.com/datasets/pratyushpuri/drug-labels-and-side-effects-dataset-1400-records)
+- Source: Drug Labels & Side Effects Dataset (Kaggle, 1400 records)
 
 - Preprocessing included:
 
@@ -17,6 +17,20 @@ Built with Random Forest, XGBoost, and Gradient Boosting pipelines, and deployed
   - Converting expiry dates → days_until_expiry
 
   - Balancing classes with SMOTE
+
+# Dataset Features
+
+| Feature | Type | Description |
+| --- | --- | --- |
+| dosage_mg | Numeric | Drug dosage in mg |
+| drug_class | Categorical | Drug category (e.g., Antibiotic, Analgesic) |
+| indications | Text | Medical conditions the drug treats |
+| side_effects | Text | Reported side effects |
+| contraindications | Text | Conditions under which drug should not be used |
+| warnings | Text | Usage warnings (e.g., alcohol) |
+| approval_status | Categorical | Drug approval status |
+| expiry_date | Date | Drug expiry date (converted to `days_until_expiry`) |
+| severity_class (target) | Categorical | 0 → Mild, 1 → Moderate, 2 → Severe |
 
 ## 🔥 What This Project Is
 
@@ -34,6 +48,16 @@ This repo contains:
 
 ```Drugs-SideEffect-Analysis/
 
+├── CLI(inference)/ # Command-line inference script
+│ └── inference.py
+
+├── Source/ # FastAPI backend
+│ └── app.py
+
+├── model/ # Saved models & encoders
+│ ├── best_pipeline.joblib
+│ └── label_encoder.joblib
+
 ├── notebooks/ # Jupyter notebooks (EDA → Deployment)
 │ ├── 1_EDA.ipynb
 │ ├── 2_Preprocessing.ipynb
@@ -47,15 +71,6 @@ This repo contains:
 │ ├── 10_Comparison_Model.ipynb
 │ ├── 11_Best_Model.ipynb
 │ └── 12_Inference.ipynb
-├── CLI(inference)/ # Command-line inference script
-│ └── inference.py
-
-├── Source/ # FastAPI backend
-│ └── app.py
-
-├── model/ # Saved models & encoders
-│ ├── best_pipeline.joblib
-│ └── label_encoder.joblib
 
 ├── .gitignore
 ├── README.md
@@ -142,6 +157,57 @@ I built a REST API using FastAPI that loads the trained pipeline and makes predi
   
 - Explains each step of inference clearly
 
+## FastAPI Deployment ⚡
+
+- Built a REST API using **FastAPI**:
+    - Loads the trained model (`best_pipeline.joblib`) on startup
+    - `/predict` endpoint accepts JSON input and returns predicted severity
+    - Input validation ensures correct data types
+    - Converts `expiry_date` automatically to `days_until_expiry`
+
+**Example Request:**
+
+```json
+POST /predict
+{
+  "dosage_mg": 500,
+  "drug_class": "Antibiotic",
+  "indications": "Bacterial infection",
+  "side_effects": "Nausea",
+  "contraindications": "Liver disease",
+  "warnings": "Avoid alcohol",
+  "approval_status": "Approved",
+  "expiry_date": "2026-05-10"
+}
+
+```
+
+**Example Response:**
+
+```json
+{
+  "status_code": 200,
+  "prediction_class": "Moderate"
+}
+
+```
+
+**cURL Example:**
+
+```bash
+curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json" -d '{
+  "dosage_mg": 500,
+  "drug_class": "Antibiotic",
+  "indications": "Bacterial infection",
+  "side_effects": "Nausea",
+  "contraindications": "Liver disease",
+  "warnings": "Avoid alcohol",
+  "approval_status": "Approved",
+  "expiry_date": "2026-05-10"
+}'
+
+```
+
 ## 📊 Model Performance & Comparison
 During development, I experimented with several models to predict drug side effect severity and evaluated them on accuracy, log loss, and class-level metrics to determine the best approach.
 
@@ -152,6 +218,30 @@ During development, I experimented with several models to predict drug side effe
 | **Gradient Boosting (CV & Hyperparameter Tuning)** | 0.33–0.36     | 1.10–1.11     | High overfitting (train 0.92 vs test \~0.33). Performs well on class 0 but fails on class 2.                             |
 | **XGBoost**                                        | 0.3576        | 1.098         | Lowest log loss but heavily biased toward class 0. Underfits on training data; predictions skewed toward majority class. |
 | **Logistic Regression**                            | 0.347         | 1.180         | Baseline linear model; underfits, uniform predictions across classes, highlighting dataset complexity.                   |
+
+
+## Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Rose1509/Drugs-SideEffect-Analysis.git
+cd Drugs-SideEffect-Analysis
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Jupyter Notebook
+jupyter notebook
+
+# Run API (optional)
+uvicorn Source.app:app --reload
+
+```
+
 
 ### 🔍 Key Insights
 
