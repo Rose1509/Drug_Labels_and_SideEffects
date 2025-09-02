@@ -207,6 +207,10 @@ curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json"
 }'
 
 ```
+<img width="817" height="283" alt="Screenshot 2025-09-02 104114" src="https://github.com/user-attachments/assets/e0ec6f42-0b59-4f6e-a116-12a35beb09f9" />
+
+<img width="818" height="105" alt="Screenshot 2025-09-02 104124" src="https://github.com/user-attachments/assets/ed8ed562-2a8e-4888-a5d8-9f6dcc0ff8a7" />
+
 
 ## 📊 Model Performance & Comparison
 During development, I experimented with several models to predict drug side effect severity and evaluated them on accuracy, log loss, and class-level metrics to determine the best approach.
