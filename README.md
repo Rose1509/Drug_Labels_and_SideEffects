@@ -6,7 +6,7 @@ Built with Random Forest, XGBoost, and Gradient Boosting pipelines, and deployed
 
 # 📂 Dataset
 
-- Source: Drug Labels & Side Effects Dataset (Kaggle, 1400 records)
+- Source: Drug Labels and Side Effects Dataset (1400 Records)
 
 - Preprocessing included:
 
